@@ -1,0 +1,24 @@
+{
+  "name": "serial2node",
+  "version": "0.0.2",
+  "description": "listens to serial port and uploads the data to the server through websockets",
+  "main": "start.js",
+  "dependencies": {
+    "osc": "^2.2.4",
+    "serialport": "^7.0.2",
+    "socket.io-client": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "seeker",
+    "seads",
+    "leuven",
+    "microbit",
+    "serial"
+  ],
+  "author": "Pieter Steyaert & Joni De Borger",
+  "license": "ISC"
+}
