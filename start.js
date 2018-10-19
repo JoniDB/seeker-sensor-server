@@ -71,6 +71,17 @@ const crew = [
         id: 4
 }];
 
+let crewAverage = {
+    x: 0,
+    y: 0,
+    z: 0,
+    direction: 0,
+    gsr: 0,
+    bpm: 0,
+    bpmDiff: 0,
+    temperature: 0,
+};
+
     const mappings = {
     bpm: {
         min: 20,
@@ -197,9 +208,19 @@ function updateCrewData(s, property, value) {
     console.log(crew);
 }
 
-function sendOscCrewData(identifier, name, value) {
+function updateCrewAverage(property, value) {
+    let average = 0;
+    crew.forEach((member, index) => {
+        average += member[property];
+    })
+    average = average/4;
+    crewAverage[property] = average;
+    //sendOscCrewData(property, average);
+}
+
+function sendOscCrewData(name, value) {
     //maybe calculate some averages of weet ik veel
-    let address = `${identifier}/${name}`;
+    let address = `/${name}`;
     sendOscData(address, value);
 }
 
